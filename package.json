@@ -6,17 +6,47 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint:typescript": "npx tsc --noEmit",
+    "lint": "next lint",
+    "lint:fix": "npx eslint 'src/**/*.{js,jsx,tsx,ts}' --fix",
+    "format": "npx prettier '**/*.{js,jsx,ts,tsx,json,css,scss,md}' --write",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,json,css,scss,ts,tsx}": [
+      "prettier --write",
+      "npx eslint"
+    ]
+  },
+  "msw": {
+    "workerDirectory": "public"
   },
   "dependencies": {
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.2",
+    "dayjs": "^1.10.6",
+    "msw": "^0.35.0",
     "next": "11.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.13.0",
+    "react-icons": "^4.2.0",
+    "react-query": "^3.21.0",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@types/react": "17.0.19",
+    "@types/yup": "^0.29.13",
+    "autoprefixer": "^10.3.2",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
+    "tailwindcss": "^2.2.7",
     "typescript": "4.3.5"
   }
 }
