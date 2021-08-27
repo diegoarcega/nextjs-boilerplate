@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+#__next {
+  min-height: 100%;
+  min-height: -webkit-fill-available;
+  height: 100%;
+}
+
+body,
+#__next {
+  @apply bg-gray-800 text-blue-50;
+}
+
+.gradient {
+  @apply bg-gradient-to-r from-gray-500 via-white to-gray-700;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
